@@ -1,16 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhk1ojv1qvu3s"]
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_7chh1"]
-[ext_resource type="Texture2D" uid="uid://ucok5lpxf5da" path="res://assets/restart.png" id="1_nhjxq"]
+[ext_resource type="Texture2D" uid="uid://clq4xnerfokua" path="res://assets/restart2.png" id="3_k0y75"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwr14"]
-texture = ExtResource("1_nhjxq")
+texture = ExtResource("3_k0y75")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dmnle"]
-texture = ExtResource("1_nhjxq")
+texture = ExtResource("3_k0y75")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xt8gv"]
-texture = ExtResource("1_nhjxq")
+texture = ExtResource("3_k0y75")
 
 [node name="GameOver" type="CanvasLayer"]
 script = ExtResource("1_7chh1")

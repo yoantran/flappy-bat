@@ -1,21 +1,21 @@
 [gd_scene load_steps=7 format=3 uid="uid://dy05riyw7hlpo"]
 
 [ext_resource type="Script" path="res://scenes/bat.gd" id="1_c7h2m"]
-[ext_resource type="Texture2D" uid="uid://coa5rixiv33bv" path="res://assets/bird1.png" id="2_nlrqp"]
-[ext_resource type="Texture2D" uid="uid://c4nu1obe1e45u" path="res://assets/bird2.png" id="3_uu4yc"]
-[ext_resource type="Texture2D" uid="uid://byqb27akt3wtp" path="res://assets/bird3.png" id="4_8lng8"]
+[ext_resource type="Texture2D" uid="uid://dp33j005axjrx" path="res://assets/bat1.png" id="2_b61il"]
+[ext_resource type="Texture2D" uid="uid://c1oybheql3cdm" path="res://assets/bat2.png" id="3_qj0sq"]
+[ext_resource type="Texture2D" uid="uid://dc0esu831f0pe" path="res://assets/bat3.png" id="4_ccltk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6hkqp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_nlrqp")
+"texture": ExtResource("2_b61il")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_uu4yc")
+"texture": ExtResource("3_qj0sq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_8lng8")
+"texture": ExtResource("4_ccltk")
 }],
 "loop": true,
 "name": &"flying",
@@ -23,8 +23,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mu41y"]
-radius = 17.0
-height = 46.0
+radius = 13.0
+height = 54.0
 
 [node name="Bat" type="CharacterBody2D"]
 script = ExtResource("1_c7h2m")

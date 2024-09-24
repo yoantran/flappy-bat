@@ -1,54 +1,57 @@
 [gd_scene load_steps=8 format=3 uid="uid://qr5lelveweif"]
 
 [ext_resource type="Script" path="res://scenes/pipe.gd" id="1_fegkj"]
-[ext_resource type="Texture2D" uid="uid://2s70w5tej5vr" path="res://assets/pipe.png" id="1_glv7f"]
+[ext_resource type="Texture2D" uid="uid://hkvuss0ega4m" path="res://assets/pipe4.png" id="2_27l0w"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb684"]
-size = Vector2(78, 36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hxwc0"]
+radius = 89.202
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m43cs"]
-size = Vector2(72, 524)
+size = Vector2(25, 379)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkfpo"]
-size = Vector2(78, 36)
+[sub_resource type="CircleShape2D" id="CircleShape2D_hayah"]
+radius = 90.0056
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wlgp"]
-size = Vector2(72, 524)
+size = Vector2(24, 379)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_st82x"]
-size = Vector2(20, 200)
+size = Vector2(20, 219)
 
 [node name="Pipe" type="Area2D" groups=["pipes"]]
 script = ExtResource("1_fegkj")
 
 [node name="Lower" type="Sprite2D" parent="."]
-texture = ExtResource("1_glv7f")
+position = Vector2(0, 6)
+texture = ExtResource("2_27l0w")
 offset = Vector2(0, 380)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 118)
-shape = SubResource("RectangleShape2D_sb684")
+position = Vector2(0, 199)
+shape = SubResource("CircleShape2D_hxwc0")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 398)
+position = Vector2(-4.5, 476.5)
 shape = SubResource("RectangleShape2D_m43cs")
 
 [node name="Upper" type="Sprite2D" parent="."]
-texture = ExtResource("1_glv7f")
+position = Vector2(0, -5)
+texture = ExtResource("2_27l0w")
 offset = Vector2(0, -380)
 flip_v = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(0, -118)
-shape = SubResource("RectangleShape2D_xkfpo")
+position = Vector2(0, -198)
+shape = SubResource("CircleShape2D_hayah")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
-position = Vector2(0, -398)
+position = Vector2(-4, -475.5)
 shape = SubResource("RectangleShape2D_8wlgp")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_st82x")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

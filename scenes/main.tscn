@@ -1,18 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://crlu0l4h10cd2"]
+[gd_scene load_steps=8 format=3 uid="uid://crlu0l4h10cd2"]
 
-[ext_resource type="Texture2D" uid="uid://b7rll5n1170li" path="res://assets/bg.png" id="1_7fq25"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_dolq6"]
 [ext_resource type="PackedScene" uid="uid://qr5lelveweif" path="res://scenes/pipe.tscn" id="2_1m1vb"]
 [ext_resource type="PackedScene" uid="uid://dy05riyw7hlpo" path="res://scenes/bat.tscn" id="3_83sss"]
+[ext_resource type="Texture2D" uid="uid://bi2jejpobi2jy" path="res://assets/bg_noground.png" id="3_jx5dy"]
 [ext_resource type="PackedScene" uid="uid://bruxq35lpxaa8" path="res://scenes/ground.tscn" id="4_dc1pg"]
 [ext_resource type="PackedScene" uid="uid://bhk1ojv1qvu3s" path="res://scenes/game_over.tscn" id="6_2u7yr"]
+[ext_resource type="FontFile" uid="uid://8u88yppshuar" path="res://assets/fonts/monobit.ttf" id="6_ahxcq"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dolq6")
 pipe_scene = ExtResource("2_1m1vb")
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("1_7fq25")
+position = Vector2(55, -399)
+scale = Vector2(1.63213, 1.63213)
+texture = ExtResource("3_jx5dy")
 offset = Vector2(432, 384)
 
 [node name="Bat" parent="." instance=ExtResource("3_83sss")]
@@ -35,7 +38,8 @@ offset_bottom = 61.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("6_ahxcq")
+theme_override_font_sizes/font_size = 80
 text = "Score: 0"
 
 [node name="GameOver" parent="." instance=ExtResource("6_2u7yr")]
