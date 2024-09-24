@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhk1ojv1qvu3s"]
+[gd_scene load_steps=7 format=3 uid="uid://bhk1ojv1qvu3s"]
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_7chh1"]
-[ext_resource type="Texture2D" uid="uid://clq4xnerfokua" path="res://assets/restart2.png" id="3_k0y75"]
+[ext_resource type="AudioStream" uid="uid://dkjueh3vcu8ec" path="res://assets/audio/sfx/gameboy-pluck-41265.mp3" id="3_e3hsu"]
+[ext_resource type="Texture2D" uid="uid://clq4xnerfokua" path="res://assets/ui/restart2.png" id="3_k0y75"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwr14"]
 texture = ExtResource("3_k0y75")
@@ -30,5 +31,11 @@ grow_vertical = 2
 theme_override_styles/hover = SubResource("StyleBoxTexture_iwr14")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dmnle")
 theme_override_styles/normal = SubResource("StyleBoxTexture_xt8gv")
+
+[node name="restart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e3hsu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_e3hsu")
 
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

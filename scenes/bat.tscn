@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dy05riyw7hlpo"]
 
 [ext_resource type="Script" path="res://scenes/bat.gd" id="1_c7h2m"]
-[ext_resource type="Texture2D" uid="uid://dp33j005axjrx" path="res://assets/bat1.png" id="2_b61il"]
-[ext_resource type="Texture2D" uid="uid://c1oybheql3cdm" path="res://assets/bat2.png" id="3_qj0sq"]
-[ext_resource type="Texture2D" uid="uid://dc0esu831f0pe" path="res://assets/bat3.png" id="4_ccltk"]
+[ext_resource type="Texture2D" uid="uid://dp33j005axjrx" path="res://assets/sprites/bat1.png" id="2_b61il"]
+[ext_resource type="Texture2D" uid="uid://c1oybheql3cdm" path="res://assets/sprites/bat2.png" id="3_qj0sq"]
+[ext_resource type="Texture2D" uid="uid://dc0esu831f0pe" path="res://assets/sprites/bat3.png" id="4_ccltk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6hkqp"]
 animations = [{

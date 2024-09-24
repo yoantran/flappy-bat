@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://crlu0l4h10cd2"]
+[gd_scene load_steps=9 format=3 uid="uid://crlu0l4h10cd2"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_dolq6"]
 [ext_resource type="PackedScene" uid="uid://qr5lelveweif" path="res://scenes/pipe.tscn" id="2_1m1vb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bruxq35lpxaa8" path="res://scenes/ground.tscn" id="4_dc1pg"]
 [ext_resource type="PackedScene" uid="uid://bhk1ojv1qvu3s" path="res://scenes/game_over.tscn" id="6_2u7yr"]
 [ext_resource type="FontFile" uid="uid://8u88yppshuar" path="res://assets/fonts/monobit.ttf" id="6_ahxcq"]
+[ext_resource type="AudioStream" uid="uid://kix3xo5huocq" path="res://assets/audio/music/suits-you-69233.mp3" id="8_igcdw"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dolq6")
@@ -43,6 +44,11 @@ theme_override_font_sizes/font_size = 80
 text = "Score: 0"
 
 [node name="GameOver" parent="." instance=ExtResource("6_2u7yr")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_igcdw")
+autoplay = true
+bus = &"Music"
 
 [connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
