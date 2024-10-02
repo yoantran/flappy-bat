@@ -35,7 +35,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_xt8gv")
 [node name="restart" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_e3hsu")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="RestartSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_e3hsu")
+bus = &"SFX"
 
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

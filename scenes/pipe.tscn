@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://qr5lelveweif"]
+[gd_scene load_steps=8 format=3 uid="uid://qr5lelveweif"]
 
 [ext_resource type="Script" path="res://scenes/pipe.gd" id="1_fegkj"]
 [ext_resource type="Texture2D" uid="uid://hkvuss0ega4m" path="res://assets/sprites/pipe4.png" id="2_27l0w"]
-[ext_resource type="AudioStream" uid="uid://3ddq4wlw1o7u" path="res://assets/audio/sfx/retro-coin-3-236679.mp3" id="3_3qtyn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hxwc0"]
 radius = 89.202
@@ -54,10 +53,6 @@ shape = SubResource("RectangleShape2D_8wlgp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_st82x")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Area2D"]
-stream = ExtResource("3_3qtyn")
-bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

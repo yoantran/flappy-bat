@@ -14,6 +14,9 @@ var score
 var screen_size: Vector2i
 var ground_height: int
 var pipes: Array
+var sfx_running: bool
+
+@onready var crash_sfx: AudioStreamPlayer = $CrashSfx
 
 
 
@@ -27,6 +30,7 @@ func _ready():
 func new_game():
     game_running = false
     game_over = false
+    sfx_running = true
     score = 0
     scroll = 0
     $ScoreLabel.text = "SCORE: %d" % [score]
@@ -95,6 +99,9 @@ func check_top():
 
 func stop_game():
     $PipeTimer.stop()
+    if sfx_running:
+        crash_sfx.play()
+        sfx_running = false
     $Bat.flying = false
     game_running = false
     game_over = true
