@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_dolq6"]
 [ext_resource type="PackedScene" uid="uid://qr5lelveweif" path="res://scenes/pipe.tscn" id="2_1m1vb"]
 [ext_resource type="PackedScene" uid="uid://dy05riyw7hlpo" path="res://scenes/bat.tscn" id="3_83sss"]
-[ext_resource type="Texture2D" uid="uid://bi2jejpobi2jy" path="res://assets/bg_noground.png" id="3_jx5dy"]
+[ext_resource type="Texture2D" uid="uid://bjea5qjcjihmp" path="res://assets/bg/bg.png" id="3_gn288"]
 [ext_resource type="PackedScene" uid="uid://bruxq35lpxaa8" path="res://scenes/ground.tscn" id="4_dc1pg"]
 [ext_resource type="PackedScene" uid="uid://bhk1ojv1qvu3s" path="res://scenes/game_over.tscn" id="6_2u7yr"]
 [ext_resource type="FontFile" uid="uid://8u88yppshuar" path="res://assets/fonts/monobit.ttf" id="6_ahxcq"]
@@ -15,9 +15,9 @@ script = ExtResource("1_dolq6")
 pipe_scene = ExtResource("2_1m1vb")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(55, -399)
+position = Vector2(52, -284)
 scale = Vector2(1.63213, 1.63213)
-texture = ExtResource("3_jx5dy")
+texture = ExtResource("3_gn288")
 offset = Vector2(432, 384)
 
 [node name="Bat" parent="." instance=ExtResource("3_83sss")]
