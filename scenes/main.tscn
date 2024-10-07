@@ -16,17 +16,6 @@
 script = ExtResource("1_dolq6")
 pipe_scene = ExtResource("2_1m1vb")
 
-[node name="Control" parent="." instance=ExtResource("10_bsfcd")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 440.0
-offset_top = 456.0
-offset_right = 440.0
-offset_bottom = 456.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="intro" parent="." instance=ExtResource("11_tm53w")]
 visible = false
 
@@ -95,6 +84,17 @@ offset_bottom = 83.0
 theme_override_fonts/font = ExtResource("6_ahxcq")
 theme_override_font_sizes/font_size = 40
 text = "SFX"
+
+[node name="Control" parent="." instance=ExtResource("10_bsfcd")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 440.0
+offset_top = 456.0
+offset_right = 440.0
+offset_bottom = 456.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="SFXSlider" type="HSlider" parent="."]
 offset_left = 120.0
