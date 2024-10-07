@@ -15,19 +15,30 @@ var screen_size: Vector2i
 var ground_height: int
 var pipes: Array
 var sfx_running: bool
+var bgMusic = AudioServer.get_bus_index("Music")
+var sfxMusic = AudioServer.get_bus_index("SFX")
 
 @onready var crash_sfx: AudioStreamPlayer = $CrashSfx
+@onready var music_track: AudioStreamPlayer = $BgMusic
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+    # await splash()
     screen_size = get_window().size
     ground_height = $Ground.get_node("Sprite2D").texture.get_height()
     new_game()
+    $BgMusicSlider.value = db_to_linear(bgMusic)
+    $SFXSlider.value = db_to_linear(sfxMusic)
+
+
+# func splash():
+#     $intro
 
 
 func new_game():
+    $Control.visible = true
     game_running = false
     game_over = false
     sfx_running = true
@@ -54,10 +65,13 @@ func _input(event):
 
 
 func start_game():
+    $Control.visible = false
     game_running = true
     $Bat.flying = true
     $Bat.flap()
     $PipeTimer.start()
+    $BgMusicSlider.editable = false
+    $SFXSlider.editable = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -98,6 +112,8 @@ func check_top():
 
 
 func stop_game():
+    $BgMusicSlider.editable = true
+    $SFXSlider.editable = true
     $PipeTimer.stop()
     if sfx_running:
         crash_sfx.play()
@@ -120,3 +136,11 @@ func _on_ground_hit() -> void:
 
 func _on_game_over_restart() -> void:
     new_game()
+
+
+func _on_bg_music_slider_value_changed(value: float) -> void:
+    AudioServer.set_bus_volume_db(bgMusic, linear_to_db(value))
+
+
+func _on_sfx_slider_value_changed(value: float) -> void:
+    AudioServer.set_bus_volume_db(sfxMusic, linear_to_db(value))

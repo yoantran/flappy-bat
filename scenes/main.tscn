@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://crlu0l4h10cd2"]
+[gd_scene load_steps=12 format=3 uid="uid://crlu0l4h10cd2"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_dolq6"]
 [ext_resource type="PackedScene" uid="uid://qr5lelveweif" path="res://scenes/pipe.tscn" id="2_1m1vb"]
@@ -9,10 +9,26 @@
 [ext_resource type="FontFile" uid="uid://8u88yppshuar" path="res://assets/fonts/monobit.ttf" id="6_ahxcq"]
 [ext_resource type="AudioStream" uid="uid://kix3xo5huocq" path="res://assets/audio/music/suits-you-69233.mp3" id="8_igcdw"]
 [ext_resource type="AudioStream" uid="uid://3ddq4wlw1o7u" path="res://assets/audio/sfx/retro-coin-3-236679.mp3" id="9_mkgfy"]
+[ext_resource type="PackedScene" uid="uid://32cvyxohdg3w" path="res://scenes/control.tscn" id="10_bsfcd"]
+[ext_resource type="PackedScene" uid="uid://wvpu0o83ftlu" path="res://scenes/intro.tscn" id="11_tm53w"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dolq6")
 pipe_scene = ExtResource("2_1m1vb")
+
+[node name="Control" parent="." instance=ExtResource("10_bsfcd")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 440.0
+offset_top = 456.0
+offset_right = 440.0
+offset_bottom = 456.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="intro" parent="." instance=ExtResource("11_tm53w")]
+visible = false
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(52, -284)
@@ -33,10 +49,9 @@ z_index = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 351.0
-offset_top = 6.0
-offset_right = 502.0
-offset_bottom = 61.0
+offset_left = 336.0
+offset_right = 521.0
+offset_bottom = 69.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -55,6 +70,42 @@ bus = &"Music"
 stream = ExtResource("9_mkgfy")
 bus = &"SFX"
 
+[node name="BgMusicSlider" type="HSlider" parent="."]
+offset_left = 120.0
+offset_top = 32.0
+offset_right = 256.0
+offset_bottom = 48.0
+max_value = 1.0
+step = 0.001
+
+[node name="Music" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 19.0
+offset_right = 98.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("6_ahxcq")
+theme_override_font_sizes/font_size = 40
+text = "Music"
+
+[node name="SFX" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("6_ahxcq")
+theme_override_font_sizes/font_size = 40
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="."]
+offset_left = 120.0
+offset_top = 62.0
+offset_right = 256.0
+offset_bottom = 78.0
+max_value = 1.0
+step = 0.001
+
 [connection signal="hit" from="Ground" to="." method="_on_ground_hit"]
 [connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
 [connection signal="restart" from="GameOver" to="." method="_on_game_over_restart"]
+[connection signal="value_changed" from="BgMusicSlider" to="." method="_on_bg_music_slider_value_changed"]
+[connection signal="value_changed" from="SFXSlider" to="." method="_on_sfx_slider_value_changed"]

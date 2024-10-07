@@ -8,7 +8,7 @@ var flying : bool = false
 var falling : bool = false
 const START_POS = Vector2(100,400)
 
-# called when the node enters the scen tree for the first time
+# called when the node enters the scene tree for the first time
 func _ready():
     reset()
 
