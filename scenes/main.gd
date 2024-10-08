@@ -54,9 +54,16 @@ func new_game():
 
 func _input(event):
     if (
-           not game_over and event is InputEventMouseButton and
-           event.button_index == MOUSE_BUTTON_LEFT and event.pressed
+        not game_over and (
+            (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed) or
+            (event.is_action_pressed("jump") and event.pressed)
+            # (event is InputEventKey and event.scancode == KEY_SPACE and event.pressed)
+        )
     ):
+    # if (
+    #        not game_over and event is InputEventMouseButton and
+    #        event.button_index == MOUSE_BUTTON_LEFT and event.pressed
+    # ):
         if game_running and $Bat.flying:
             $Bat.flap()
             check_top()
